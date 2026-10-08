@@ -140,23 +140,15 @@ print("bronze_po_lines:", spark.table("bronze_po_lines").count(), "rows")
 # META   "language_group": "synapse_pyspark"
 # META }
 
-# MARKDOWN ********************
-
-# ### Check
-# 
-# - `bronze_po_header`: **10,449** rows
-# - `bronze_po_lines`: **10,449** rows. Every order in this dataset has exactly one line, so the counts match. The flattening pattern is the same for orders with many lines.
-# - **25** orders carry a supplier *name* in upper case instead of a supplier code. That is deliberate; Silver fixes it in step 2.5.
-
 # CELL ********************
 
-display(spark.table("bronze_po_header").limit(5))
-display(spark.table("bronze_po_lines").limit(5))
+# display(spark.table("bronze_po_header").limit(5))
+# display(spark.table("bronze_po_lines").limit(5))
 
-# The 25 orders with a supplier name instead of a code
-display(spark.table("bronze_po_header")
-        .filter(~F.col("supplier_code").startswith("SUP"))
-        .groupBy("supplier_code").count())
+# # The 25 orders with a supplier name instead of a code
+# display(spark.table("bronze_po_header")
+#         .filter(~F.col("supplier_code").startswith("SUP"))
+#         .groupBy("supplier_code").count())
 
 # METADATA ********************
 
