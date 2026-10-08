@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "COPY_RAWDATA_TO_BRONZELAYER"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "997ee3c2-8f4f-bc5d-48ca-ce3f8ee5b0e0"
+  }
+}
